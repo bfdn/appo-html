@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Dosis';
+    src: url("../fonts/Dosis-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Dosis';
+    src: url("../fonts/Dosis-Regular.ttf");
+    font-weight: 400;
+}
+
+
+//@import url("../fonts/Montserrat-Bold.ttf");
+
+$max-width: 1170px;
+$gutter: 30px;
+$border-radius: 3px;
+$finger-size: 44px;
+
+
+$font-family-dosis: 'Dosis-Medium', Arial sans-serif;
+$font-dosis-regular: 'Dosis-Regular', Arial sans-serif;
+$font-dosis: 'Dosis', Arial sans-serif;
+
+//$font-family-mont-medium: 'Dosis-Medium', 'Jost', Arial sans-serif;
+$font-size: 14px;
+//$font-size-small: .9em;
+
+
+$color-white: #ffffff;
+$color-dark-blue: #233148;
+$color-gray: #97a4be;
+$color-black: #000000;
+
+
+
+$color-yellow: #ffe100;
+$color-dark-black: #221d1d;
+
+$color-menu-black: #1e1e1e;
+
+
+
+$bg-blue: #223047;
+$bg-light-blue: #00fff0;
+$bg-transparent: "transparent";

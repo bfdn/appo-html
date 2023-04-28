@@ -1,0 +1,13 @@
+@import "config/variable";
+@import "config/mixin";
+//
+@import "helper/normalize";
+@import "helper/formalize";
+@import "helper/global.scss";
+//
+//@import "plugin/flickity.scss";
+//
+@import "global/header";
+@import "global/footer";
+// pages
+@import "pages/index.scss";

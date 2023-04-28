@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-menu" viewBox="0 0 24 24">
+                <path d="M1.5 4.5h21v4.5h-21zM1.5 10.5h21v4.5h-21zM1.5 16.5h21v4.5h-21z"></path>
+            </symbol>
+            <symbol id="icon-heart-o" viewBox="0 0 28 28">
+                <path
+                    d="M26 9.312c0-4.391-2.969-5.313-5.469-5.313-2.328 0-4.953 2.516-5.766 3.484-0.375 0.453-1.156 0.453-1.531 0-0.812-0.969-3.437-3.484-5.766-3.484-2.5 0-5.469 0.922-5.469 5.313 0 2.859 2.891 5.516 2.922 5.547l9.078 8.75 9.063-8.734c0.047-0.047 2.938-2.703 2.938-5.563zM28 9.312c0 3.75-3.437 6.891-3.578 7.031l-9.734 9.375c-0.187 0.187-0.438 0.281-0.688 0.281s-0.5-0.094-0.688-0.281l-9.75-9.406c-0.125-0.109-3.563-3.25-3.563-7 0-4.578 2.797-7.313 7.469-7.313 2.734 0 5.297 2.156 6.531 3.375 1.234-1.219 3.797-3.375 6.531-3.375 4.672 0 7.469 2.734 7.469 7.313z">
+                </path>
+            </symbol>
+            <symbol id="icon-briefcase" viewBox="0 0 24 24">
+                <path
+                    d="M9 6v-1c0-0.276 0.111-0.525 0.293-0.707s0.431-0.293 0.707-0.293h4c0.276 0 0.525 0.111 0.707 0.293s0.293 0.431 0.293 0.707v1zM9 20v-12h6v12zM7 8v12h-3c-0.276 0-0.525-0.111-0.707-0.293s-0.293-0.431-0.293-0.707v-10c0-0.276 0.111-0.525 0.293-0.707s0.431-0.293 0.707-0.293zM17 6v-1c0-0.828-0.337-1.58-0.879-2.121s-1.293-0.879-2.121-0.879h-4c-0.828 0-1.58 0.337-2.121 0.879s-0.879 1.293-0.879 2.121v1h-3c-0.828 0-1.58 0.337-2.121 0.879s-0.879 1.293-0.879 2.121v10c0 0.828 0.337 1.58 0.879 2.121s1.293 0.879 2.121 0.879h16c0.828 0 1.58-0.337 2.121-0.879s0.879-1.293 0.879-2.121v-10c0-0.828-0.337-1.58-0.879-2.121s-1.293-0.879-2.121-0.879zM17 20v-12h3c0.276 0 0.525 0.111 0.707 0.293s0.293 0.431 0.293 0.707v10c0 0.276-0.111 0.525-0.293 0.707s-0.431 0.293-0.707 0.293z">
+                </path>
+            </symbol>
+            <symbol id="icon-tag-cord" viewBox="0 0 32 32">
+                <path
+                    d="M10.761 6h5.239l13.381 13.381c0.783 0.783 0.787 2.051 0.008 2.831l-7.177 7.177c-0.778 0.778-2.047 0.776-2.831-0.008l-13.381-13.381v-8c0-0.95 0.653-1.736 1.532-1.945 0.164 0.265 0.299 0.581 0.393 0.949-0.518 0.043-0.925 0.481-0.925 1.005v7.492l13.1 13.171c0.389 0.391 1.018 0.39 1.404 0.002l7.164-7.212c0.387-0.39 0.385-1.019-0.006-1.407l-13.162-13.054h-4.509c-0.024-0.114-0.047-0.232-0.071-0.353-0.044-0.224-0.097-0.44-0.159-0.647v0 0zM11.481 9c0.006-0 0.013-0 0.019-0 1.381 0 2.5 1.119 2.5 2.5s-1.119 2.5-2.5 2.5c-1.381 0-2.5-1.119-2.5-2.5 0-0.161 0.015-0.318 0.044-0.47 0.578 1.277 1.301 1.841 2.379 1.975 0.006 0.001 0.012-0.002 0.018-0.007 0.020 0.001 0.040 0.001 0.059 0.001 0.828 0 1.5-0.672 1.5-1.5 0-0.685-0.46-1.263-1.088-1.443 0-0.007-0-0.012-0.001-0.012-0.129-0.188-0.274-0.529-0.431-1.045v0 0zM9.939 6.842c-0.867-4.368-5.555-4.982-7.362-2.108-1.449 2.305-0.015 6.266 2.423 6.266v-1c-1.552 0-2.648-3.029-1.577-4.734 1.343-2.136 4.851-1.676 5.535 1.77 0.809 4.077 1.419 4.963 3.042 4.963v-1c-0.993 0-1.335-0.496-2.061-4.158v0z">
+                </path>
+            </symbol>
+            <symbol id="icon-pencil" viewBox="0 0 32 32">
+                <path
+                    d="M12 20l4-2 14-14-2-2-14 14-2 4zM9.041 27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435 12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435 4z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+
+
+    <header class="header">
+        <div class="container">
+
+            <div class="header__logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Home</a></li>
+                <li class="header__menu-item dropdown">
+                    <a href="#" class="header__menu-link">Features <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="dropdown__menu">
+                        <a class="dropdown__item" href="#">Action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                        <a class="dropdown__item" href="#">Another action</a>
+                    </div>
+                </li>
+                <li class="header__menu-item dropdown"><a href="#" class="header__menu-link">Pricing</a>
+                    <div class="dropdown__menu">
+                        <a class="dropdown__item" href="#">Action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                        <a class="dropdown__item" href="#">Another action 1</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="header__right">
+                <a href="" class="header__button">Get The App</a>
+                <button class="header__switch button button-icon" type="button">
+                    <svg class="icon icon-menu">
+                        <use xlink:href="#icon-menu"></use>
+                    </svg>
+                </button>
+            </div>
+
+
+        </div>
+    </header>
+    <main class="main">
+
+        <section class="slide">
+            <div class="container">
+                <div class="slide__left">
+                    <div class="slide__left-title">
+                        Choose a better way to
+                        represent your app
+                    </div>
+                    <div class="slide__left-content">
+                        Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac
+                        diam
+                        sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere.
+                    </div>
+                    <div class="slide__left-bottom">
+                        <a href="" class="btn bg-ligt-blue">Download Free Today</a>
+                        <a href="" class="btn">Reach Out To Us</a>
+                    </div>
+                </div>
+                <div class="slide__right">
+                    <img src="./img/phone.png" alt="">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="features">
+            <div class="container">
+                <div class="features__title">
+                    Everything needed to power your app brend online
+                </div>
+                <div class="features__line"></div>
+                <div class="features__content">
+                    <div class="features__item">
+                        <div class="features__item-img">
+                            <img src="img/rulo.png" alt="">
+                        </div>
+                        <div class="features__item-title">
+                            Modern Flat Design
+                        </div>
+                        <div class="features__item-content">
+                            Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum
+                            ac diamdo.
+                        </div>
+                    </div>
+                    <div class="features__item">
+                        <div class="features__item-img">
+                            <img src="img/basket.png" alt="">
+                        </div>
+                        <div class="features__item-title">
+                            First 7 Days Free
+                        </div>
+                        <div class="features__item-content">
+                            Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum
+                            ac diamdo.
+                        </div>
+                    </div>
+                    <div class="features__item">
+                        <div class="features__item-img">
+                            <img src="img/message.png" alt="">
+                        </div>
+                        <div class="features__item-title">
+                            Fully Support
+                        </div>
+                        <div class="features__item-content">
+                            Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum
+                            ac diamdo.
+                        </div>
+                    </div>
+                    <div class="features__item">
+                        <div class="features__item-img">
+                            <img src="img/phone-icon.png" alt="">
+                        </div>
+                        <div class="features__item-title">
+                            User Friendly
+                        </div>
+                        <div class="features__item-content">
+                            Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum
+                            ac diamdo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="box">
+            <div class="box__left">
+                <img src="./img/box-image.jpg" alt="">
+            </div>
+            <div class="box__right">
+                <div class="box__right-title">
+                    Get More From Your Smartphone
+                </div>
+                <div class="box__right-content">
+                    Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac diam
+                    sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit.
+                    Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum
+                    sed sit amet dui. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="stable">
+            <div class="container">
+                <div class="stable__left">
+                    <div class="stable__title">
+                        Stable And Ready
+                    </div>
+                    <div class="stable__content">
+                        Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac
+                        diam
+                        sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere
+                        blandit.
+                        Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam.
+                    </div>
+                    <a href="" class="btn bg-ligt-blue stable__link">Download Free Today</a>
+                </div>
+                <div class="stable__right">
+                    <img src="./img/code.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="tab-section">
+            <div class="container">
+                <div class="tab-section__left">
+                    <img src="./img/screen.png" alt="">
+                </div>
+                <div class="tab-section__right">
+                    <div class="tab-section__item">
+                        <div class="tab-section__icon">
+                            <svg class="icon icon-heart-o">
+                                <use xlink:href="#icon-heart-o"></use>
+                            </svg>
+                        </div>
+                        <div class="tab-section__content">
+                            <h5>Made With Love</h5>
+                            <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt.
+                                Vestibulum ac diam.</p>
+                        </div>
+                    </div>
+                    <div class="tab-section__item tab-section__item--active">
+                        <div class="tab-section__icon">
+                            <svg class="icon icon-tag-cord">
+                                <use xlink:href="#icon-tag-cord"></use>
+                            </svg>
+                        </div>
+                        <div class="tab-section__content">
+                            <h5>Free of Use</h5>
+                            <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt.
+                                Vestibulum
+                                ac diam.</p>
+                        </div>
+                    </div>
+                    <div class="tab-section__item">
+                        <div class="tab-section__icon">
+                            <svg class="icon icon-briefcase">
+                                <use xlink:href="#icon-briefcase"></use>
+                            </svg>
+                        </div>
+                        <div class="tab-section__content">
+                            <h5>Fully Support Avaliable</h5>
+                            <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt.
+                                Vestibulum
+                                ac diam.</p>
+                        </div>
+                    </div>
+                    <div class="tab-section__item">
+                        <div class="tab-section__icon">
+                            <svg class="icon icon-pencil">
+                                <use xlink:href="#icon-pencil"></use>
+                            </svg>
+                        </div>
+                        <div class="tab-section__content">
+                            <h5>Flat and Modern Ui & Ux</h5>
+                            <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt.
+                                Vestibulum
+                                ac diam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="app">
+            <div class="container">
+                <div class="app__left">
+                    <div class="app__left-title">Everything You Need</div>
+                    <div class="app__left-content">
+                        <ul>
+                            <li> Android</li>
+                            <li>iPhone</li>
+                        </ul>
+                        <p>
+                            Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum
+                            ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui
+                            posuere blandit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet
+                            quam.
+                        </p>
+                    </div>
+                </div>
+                <div class="app__right">
+                    <a href="javascript:void(0)">
+                        <img src="./img/left-image.png">
+                    </a>
+                    <a href="javascript:void(0)" class="active">
+                        <img src="./img/mid-image.png">
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="./img/left-image.png">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <div class="container">
+                <a data-fancybox href="https://www.youtube.com/watch?v=ofObwFznJgg" class="video__play"></a>
+                <div class="video__title">WATCH THE VIDEO</div>
+                <div class="video__content">
+                    Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan
+                    tincidunt. Vestibulum ac diam sit amet quam vehicula
+                    elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id
+                    dui
+                    posuere blandit.
+                    Vestibulum ac diam sit amet quam.
+                </div>
+            </div>
+        </section>
+
+        <section class="download">
+            <div class="container">
+                <div class="download__title">Join The Thousands of satisfied users</div>
+                <div class="download__content">It’s just a few clicks away</div>
+                <a href="#" class="download__btn">Download</a>
+            </div>
+        </section>
+
+        <section class="quote">
+            <div class="container">
+                “Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas
+                non nisi. Curabitur aliquet quam id dui posuere blandit.Donec rutrum congue leo eget malesuada. Praesent
+                sapien massa, con non nisi. Curabitur aliquet quam id dui posuere blandit.”
+            </div>
+        </section>
+
+        <section class="app-add">
+            <div class="container">
+                <div class="app-add__left">
+                    <img src="./img/phones.png" alt="">
+                </div>
+                <div class="app-add__right">
+                    <div class="app-add__title">Now Available</div>
+                    <div class="app-add__content">
+                        Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vestibulum ac
+                        diam sit amet quam vehicula elementum sed sit amet dui. quam vehicula elementum sed sit
+                        ametsuada.
+                    </div>
+                    <div class="app-add__store">
+                        <img src="./img/playstore.png" alt="">
+                        <img src="./img/appstore.png" alt="">
+                    </div>
+                </div>
+                <a href="" class="app-add__btn btn">Get The App Today</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__menu">
+                <div class="footer__menu-item">
+                    <span>Company</span>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer__menu-item">
+                    <span>Development</span>
+                    <ul>
+                        <li><a href="#">iOS</a></li>
+                        <li><a href="#">Android</a></li>
+                    </ul>
+                </div>
+                <div class="footer__menu-item">
+                    <span>Marketing</span>
+                    <ul>
+                        <li><a href="#">Advertising</a></li>
+                        <li><a href="#">Referals</a></li>
+                        <li><a href="#">Get Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer__menu-item">
+                    <span>Community</span>
+                    <ul>
+                        <li><a href="#">Social</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__menu-item">
+                    <span>Info</span>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__subscribe">
+                <div class="footer__subscribe-title">
+                    Get In Touch
+                </div>
+                <div class="footer__subscribe-content">
+                    Subscribe to our newsletter and get notification for upcoming cool sutff.
+                </div>
+                <form class="footer__subscribe-form">
+                    <input type="text">
+                    <button type="submit" class="btn bg-ligt-blue">Count Me In</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-copy">
+                    © 2018 - Appo,All Right Reserved
+                </div>
+                <div class="footer__bottom-social">
+                    <ul class="footer__bottom-social-menu">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+</body>
+
+</html>
